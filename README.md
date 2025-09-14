@@ -166,7 +166,7 @@ To enable **swap memory** and install **OpenCV with CUDA acceleration**, you hav
 
 PyTorch and Torchvision are optimized for Jetson devices with CUDA support.  
 Follow the official NVIDIA forum instructions here:  
-👉 [PyTorch for Jetson (Official NVIDIA Forum)](https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048)
+ [PyTorch for Jetson (Official NVIDIA Forum)](https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048)
 
 select the version of each according to jetpack-sdk version and python version..
 
@@ -181,6 +181,10 @@ pip install jupyter
 ```bash
 $ python3 JetsonYolo.py
 ```
+
+## best guide link
+
+[NVIDIA Jetson with Ultralytics YOLO11](https://docs.ultralytics.com/guides/nvidia-jetson/)
 
 ## Citation
 
