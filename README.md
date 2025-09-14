@@ -181,3 +181,15 @@ pip install jupyter
 ```bash
 $ python3 JetsonYolo.py
 ```
+
+## Citation
+
+```bash
+@inproceedings{omidi2021embedded,
+  title={An Embedded Deep Learning-based Package for Traffic Law Enforcement},
+  author={Omidi, Abbas and Heydarian, Amirhossein and Mohammadshahi, Aida and Beirami, Behnam Asghari and Haddadi, Farzan},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={262--271},
+  year={2021}
+}
+```
