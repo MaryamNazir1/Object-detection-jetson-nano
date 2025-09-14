@@ -92,6 +92,8 @@ This covers:
 - Connecting to a wireless network
   save the 'wlan0' and 'eth0' ip address for next steps (Setup Headless Mode).
 
+---
+
 ## 7. Remote Access (Headless Setup)
 
 You don’t always need a monitor, keyboard, and mouse connected to your Jetson Nano.  
@@ -99,9 +101,7 @@ Instead, you can connect remotely and headlessly from another computer.
 
 There are two popular methods: **XRDP** and **VNC**.
 
----
-
-## 🖥 Method 1: XRDP (Remote Desktop Protocol)
+## Method 1: XRDP (Remote Desktop Protocol)
 
 On the Jetson Nano terminal, run:
 
@@ -120,9 +120,7 @@ sudo reboot
    You now have remote access to your Nano’s desktop.  
    Reference: [XRDP Setup Guide](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients)
 
----
-
-## 🖥 Method 2: VNC (Virtual Network Computing)
+## Method 2: VNC (Virtual Network Computing)
 
 1. Follow this guide to install VNC on Jetson Nano:  
    [VNC Setup Guide](https://developer.nvidia.com/embedded/learn/tutorials/vnc-setup)
@@ -135,3 +133,13 @@ sudo reboot
    Your Jetson Nano desktop will appear on your Windows machine.
 
 ---
+
+## 8. Environment & OpenCV Setup on Jetson Nano
+
+```bash
+sudo apt-get install python3-pip
+pip3 install virtualenv
+python3 -m virtualenv -p python3 env --system-site-packages
+source env/bin/activate
+python -c 'import cv2; print(cv2.__version__)'
+```
