@@ -178,4 +178,6 @@ pip install jupyter
 
 ## 10. Run JetsonYolo.py to detect objects with the camera.
 
+```bash
 $ python3 JetsonYolo.py
+```
