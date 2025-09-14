@@ -184,7 +184,7 @@ $ python3 JetsonYolo.py
 
 ## Citation
 
-```bash
+```bibtex
 @inproceedings{omidi2021embedded,
   title={An Embedded Deep Learning-based Package for Traffic Law Enforcement},
   author={Omidi, Abbas and Heydarian, Amirhossein and Mohammadshahi, Aida and Beirami, Behnam Asghari and Haddadi, Farzan},
