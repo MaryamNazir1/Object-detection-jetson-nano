@@ -136,6 +136,10 @@ sudo reboot
 
 ## 8. Environment & OpenCV Setup on Jetson Nano
 
+### Setup Python & Virtual Environment
+
+First, install `pip`, create a virtual environment, and verify OpenCV:
+
 ```bash
 sudo apt-get install python3-pip
 pip3 install virtualenv
@@ -143,3 +147,10 @@ python3 -m virtualenv -p python3 env --system-site-packages
 source env/bin/activate
 python -c 'import cv2; print(cv2.__version__)'
 ```
+
+### Swap File & OpenCV (CUDA Compatible)
+
+To enable **swap memory** and install **OpenCV with CUDA acceleration**, you have two options:
+
+1. Follow the detailed commands here: [opencv_swap_setup.md](opencv_swap_setup.md)
+2. Or refer to the external guide: [QEngineering – Install OpenCV on Jetson Nano](https://qengineering.eu/install-opencv-on-jetson-nano.html)
