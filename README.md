@@ -11,13 +11,13 @@ This repository contains all the processes, commands, and setup instructions req
 3. [Booting the Jetson Nano](#booting-the-jetson-nano)
 4. [Initial Setup](#initial-setup)
 5. [WiFi Setup](#wifi-setup)
-6. [Install Dependencies](#install-dependencies)
-7. [Run Object Detection](#run-object-detection)
-8. [References](#references)
+6. [Remote Access (Headless Setup)](#-remote-access-headless-setup)
+7. [Install Dependencies](#install-dependencies)
+8. [Run Object Detection](#run-object-detection)
 
 ---
 
-## Introduction
+## 1. Introduction
 
 The **Jetson Nano** is a small, powerful computer for AI at the edge. This repo serves as a **step-by-step lab notebook** to:
 
@@ -27,7 +27,7 @@ The **Jetson Nano** is a small, powerful computer for AI at the edge. This repo 
 
 ---
 
-## Hardware Requirements
+## 2. Hardware Requirements
 
 - NVIDIA Jetson Nano Developer Kit
 - microSD Card (32GB UHS-1 recommended)
@@ -38,7 +38,7 @@ The **Jetson Nano** is a small, powerful computer for AI at the edge. This repo 
 
 ---
 
-## Booting the Jetson Nano
+## 3. Booting the Jetson Nano
 
 Follow the official NVIDIA guide: [Getting Started with Jetson Nano](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#intro).
 
@@ -69,7 +69,7 @@ Once complete, your Jetson Nano will be ready to install software and run detect
 
 ---
 
-## Initial Setup
+## 4. Initial Setup
 
 Update and upgrade system packages:
 
@@ -80,7 +80,7 @@ sudo apt-get upgrade
 
 ---
 
-## WiFi Setup
+## 5. WiFi Setup
 
 If you are using a **USB WiFi dongle**, follow this detailed guide:  
  [Adding WiFi to the NVIDIA Jetson Nano (SparkFun Tutorial)](https://learn.sparkfun.com/tutorials/adding-wifi-to-the-nvidia-jetson/all)
@@ -90,5 +90,48 @@ This covers:
 - Checking supported WiFi adapters
 - Installing necessary drivers
 - Connecting to a wireless network
+  save the 'wlan0' and 'eth0' ip address for next steps (Setup Headless Mode).
 
-## save the 'wlan0' and 'eth0' ip address for next steps (Setup Headless Mode).
+## 7. Remote Access (Headless Setup)
+
+You don’t always need a monitor, keyboard, and mouse connected to your Jetson Nano.  
+Instead, you can connect remotely and headlessly from another computer.
+
+There are two popular methods: **XRDP** and **VNC**.
+
+---
+
+## 🖥 Method 1: XRDP (Remote Desktop Protocol)
+
+On the Jetson Nano terminal, run:
+
+```bash
+sudo apt update
+sudo apt install xrdp
+sudo systemctl enable xrdp
+sudo reboot
+```
+
+### After Reboot
+
+1. On your **Windows PC**, open **Remote Desktop Connection**.
+2. Enter the **IP address or Hostname** of your Jetson Nano.
+3. Enter your Jetson Nano login credentials.  
+   You now have remote access to your Nano’s desktop.  
+   Reference: [XRDP Setup Guide](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients)
+
+---
+
+## 🖥 Method 2: VNC (Virtual Network Computing)
+
+1. Follow this guide to install VNC on Jetson Nano:  
+   [VNC Setup Guide](https://developer.nvidia.com/embedded/learn/tutorials/vnc-setup)
+
+2. Once installed, download **VNC Viewer** on your Windows PC:  
+   [VNC Viewer Download](https://www.realvnc.com/en/connect/download/viewer/)
+
+3. Enter the **IP address** of your Jetson Nano in **VNC Viewer**.
+4. Enter your Jetson Nano login credentials.  
+   Your Jetson Nano desktop will appear on your Windows machine.
+
+---
