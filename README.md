@@ -136,21 +136,46 @@ sudo reboot
 
 ## 8. Environment & OpenCV Setup on Jetson Nano
 
-### Setup Python & Virtual Environment
+### I. Setup Python & Virtual Environment
 
 First, install `pip`, create a virtual environment, and verify OpenCV:
 
 ```bash
 sudo apt-get install python3-pip
 pip3 install virtualenv
+```
+
+then you can fellow the command to install python 3.8 [python38_install.md](python38_install.md)
+
+otherwise this:
+
+```bash
 python3 -m virtualenv -p python3 env --system-site-packages
 source env/bin/activate
 python -c 'import cv2; print(cv2.__version__)'
 ```
 
-### Swap File & OpenCV (CUDA Compatible)
+### II. Swap File & OpenCV (CUDA Compatible)
 
 To enable **swap memory** and install **OpenCV with CUDA acceleration**, you have two options:
 
 1. Follow the detailed commands here: [opencv_swap_setup.md](opencv_swap_setup.md)
 2. Or refer to the external guide: [QEngineering – Install OpenCV on Jetson Nano](https://qengineering.eu/install-opencv-on-jetson-nano.html)
+
+## 9. Install PyTorch & Torchvision on Jetson Nano
+
+PyTorch and Torchvision are optimized for Jetson devices with CUDA support.  
+Follow the official NVIDIA forum instructions here:  
+👉 [PyTorch for Jetson (Official NVIDIA Forum)](https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048)
+
+select the version of each according to jetpack-sdk version and python version..
+
+### install the code editor
+
+```bash
+pip install jupyter
+```
+
+## 10. Run JetsonYolo.py to detect objects with the camera.
+
+$ python3 JetsonYolo.py
